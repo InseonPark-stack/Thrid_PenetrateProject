@@ -1,26 +1,20 @@
 # Web_Front_PJT_구현상세
 
 * 제목: HappyHouse_Web_Front
-* 제작: 박인선, 이경환
+* 제작: 박인선
 
 
 <hr/>
 
 
 
-
+내가 작성한 부분 만 readme에 정리
 
 
 ### 1. 기본기능
 
-
-
-* 메인페이지
-    + <img src="/uploads/e5195d478bc08a7f86d8256ee5a23bed/메인상단.PNG" width="50%">
-    + <img src="/uploads/7ac144f506d34f414fa9269426f75e16/메인하단.PNG" width="50%">
-
 * 실거래가 검색 결과 페이지
-    + <img src="/uploads/08e620b3882e40e354d35837deda547f/실거래가_조회.PNG" width="50%">
+    + <img src="/WebContent/capture/실거래가_조회.PNG" width="50%">
 
 
 * 회원정보 등록 페이지
