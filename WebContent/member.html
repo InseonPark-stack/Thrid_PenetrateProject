@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.infoText {
+	font-weight:bold;
+}
+</style>
+<script type="text/javascript">
+	function checkDelete() {
+		confirm("정말 삭제하시겠습니까?");
+	}
+</script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 bg-primary text-center">
+				<h1 style="font-style: italic; color: #f96800"
+					onclick="location.href='index.html'">Happy House</h1>
+				<p style="color: white;">나만의 주택 검색 플랫폼</p>
+				<div id="nonMemberLogin" style="display: none;text-align: right;">
+					<button type="button" class="btn btn-secondary" data-toggle="modal"
+						data-target="#loginModal">로그인</button>
+					<button type="button" class="btn btn-success"
+						onclick="location.href='register.html'">회원가입</button>
+				</div>
+				<div id="memberLogin" style=" text-align: right;">
+					<button type="button" class="btn btn-light">로그아웃</button>
+					<button type="button" class="btn btn-success"
+						onclick="location.href='member.html'">회원정보</button>
+				</div>
+			</div>
+		</div>
+		<div class="row bg-warning" id="menu">
+			<div class="col-md-3"
+				onclick="location.href='ActualTransactionDong.html'">실거래가 조회</div>
+			<div class="col-md-3" onclick="location.href='AreaOfInterest.html'">관심지역정보</div>
+			<div class="col-md-2" onclick="location.href='addInterestArea.html'">관심지역등록</div>
+			<div class="col-md-2" onclick="location.href='Notice.html'">공지사항</div>
+			<div class="col-md-2" onclick="location.href='introduceSite.html'">웹사이트
+				소개</div>
+		</div>
+		<div class="row" style="padding: 100px;">
+			<div class="container text-center" style="border: 1px solid">
+				<form style="margin: 50px;">
+					<h1>
+						회원 정보 확인 <i class="fa fa-user-secret" aria-hidden="true"></i>
+					</h1>
+					<div class="form-group row">
+						<div class="col-md-4 text-right">
+							아이디<span style="color: red">*</span>
+						</div>
+						<div class="col-md-8 text-left infoText">
+							<span>rudghks1108</span>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-4 text-right">
+							비밀번호<span style="color: red">*</span>
+						</div>
+						<div class="col-md-8 text-left infoText">
+							<span>123123</span>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-4 text-right">
+							이름<span style="color: red">*</span>
+						</div>
+						<div class="col-md-8 text-left infoText">
+							<span>이경환</span>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-4 text-right">
+							이메일<span style="color: red">*</span>
+						</div>
+						<div class="col-md-8 text-left infoText">
+							<span>rudghks1108@naver.com</span>
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-md-4 text-right">
+							전화번호<span style="color: red">*</span>
+						</div>
+						<div class="col-md-8 text-left infoText">
+							<span>010-4165-0936</span>
+						</div>
+					</div>
+					<div class="form-group text-right">
+						<button class="btn btn-primary">
+							확인 <i class="fa fa-check" aria-hidden="true"></i>
+						</button>
+						<button class="btn btn-warning">
+							수정<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+						</button>
+						<button class="btn btn-danger" onclick="checkDelete()">
+							삭제<i class="fa fa-trash" aria-hidden="true"></i>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="loginModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">로그인 화면</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="row">
+							<div class="col-sm-3">아이디</div>
+							<div class="col-sm-9">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-3">패스워드</div>
+							<div class="col-sm-9">
+								<input type="password" class="form-control">
+							</div>
+						</div>
+
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">로그인</button>
+					<button type="button" class="btn btn-dark"
+						onclick="location.href='findPassword.html'">비밀번호 찾기</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

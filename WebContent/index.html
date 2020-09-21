@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+	crossorigin="anonymous">
+<script type="text/javascript">
+	function login() {
+		$("#nonMemberLogin").css("display", "none");
+		$("#memberLogin").css("display", "block");
+	}
+
+	function logout() {
+		$("#nonMemberLogin").css("display", "block");
+		$("#memberLogin").css("display", "none");
+	}
+</script>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 bg-primary text-center">
+				<h1 style="font-style: italic; color: #f96800"
+					onclick="location.href='index.html'">Happy House</h1>
+				<p style="color: white;">나만의 주택 검색 플랫폼</p>
+				<div id="nonMemberLogin" style="text-align: right;">
+					<button type="button" class="btn btn-secondary" data-toggle="modal"
+						data-target="#loginModal">로그인</button>
+					<button type="button" class="btn btn-success"
+						onclick="location.href='register.html'">회원가입</button>
+				</div>
+				<div id="memberLogin" style="display: none; text-align: right;">
+					<button type="button" class="btn btn-light" onclick="logout()">로그아웃</button>
+					<button type="button" class="btn btn-success"
+						onclick="location.href='member.html'">회원정보</button>
+				</div>
+			</div>
+		</div>
+		<div class="row bg-warning" id="menu">
+			<div class="col-md-3"
+				onclick="location.href='ActualTransactionDong.html'">실거래가 조회</div>
+			<div class="col-md-3" onclick="location.href='AreaOfInterest.html'">관심지역정보</div>
+			<div class="col-md-2" onclick="location.href='addInterestArea.html'">관심지역등록</div>
+			<div class="col-md-2" onclick="location.href='Notice.html'">공지사항</div>
+			<div class="col-md-2" onclick="location.href='introduceSite.html'">웹사이트
+				소개</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<div class="row adText">아파트부터 개인주택까지,</div>
+				<div class="row">
+					<img src="img/house1.png">
+				</div>
+			</div>
+			<div class="col-md-4 ">
+				<div class="row">
+					<img src="img/house2.jpg">
+				</div>
+				<div class="row adText">
+					<span style="font-size: 20px;"><span style="color: #f96800">나와
+							가장 어울리는 집</span>을 찾는</span> 나만의 주택검색 플랫폼
+				</div>
+			</div>
+			<div class="col-md-4">
+				<img src="img/house4.jpg">
+			</div>
+		</div>
+		<div class="row" id="map" style="width: 100%; height: 400px;"></div>
+		<script defer
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa9uB_DUeRq4_0Y22OezI7P4O-d-PTacE&callback=initMap">
+			
+		</script>
+		<script type="text/javascript">
+			var map;
+			var multi = {
+				lat : 37.500613,
+				lng : 127.036431
+			}
+			function initMap() {
+				map = new google.maps.Map(document.getElementById('map'), {
+					center : multi,
+					zoom : 15
+				});
+
+				infoWindow = new google.maps.InfoWindow;
+
+				//멀티캠퍼스
+				//const multimarker = new google.maps.Marker({coords: multi, content: '멀티캠퍼스', iconImage: myposition});
+				var multimarker = {
+					coords : multi,
+					content : '멀티캠퍼스(역삼)'
+				};
+				infoWindow.setPosition(multi);
+				infoWindow.setContent('멀티캠퍼스.');
+				infoWindow.open(map);
+
+			}
+		</script>
+		<div class="row" style="padding: 20px 0;">
+			<div class="col-md-4">
+				<img alt="광고" src="img/ssafyad.jpg">
+			</div>
+			<div class="col-md-4">
+				<h3>지혜롭게 내 집 마련하기</h3>
+				<hr>
+				<ul style="list-style-type: none;">
+					<li><i class="fa fa-krw" aria-hidden="true"></i> 가용자금 확인 및 대출
+						계획</li>
+					<li><i class="fa fa-home" aria-hidden="true"></i> 집 종류 및 지역 선택</li>
+					<li><i class="fa fa-line-chart" aria-hidden="true"></i> 정보 수집
+						& 시세파악</li>
+					<li><i class="fa fa-search-plus" aria-hidden="true"></i> 부동산
+						방문 & 집구경</li>
+					<li><i class="fa fa-pencil" aria-hidden="true"></i> 계약 및 잔금
+						치르기</li>
+					<li><i class="fa fa-file-text-o" aria-hidden="true"></i> 소유권
+						이전 등기</li>
+					<li><i class="fa fa-cog" aria-hidden="true"></i> 인테리어 공사</li>
+				</ul>
+				<hr>
+			</div>
+			<div class="col-md-4">
+				<h3>오늘의 뉴스</h3>
+				<hr>
+				<h4>서울 아파트, 매매 전세 다른 양상 .. 상승 .. 아시아경제</h4>
+				<ul>
+					<li><a href="#">서울 입주 2년차 아파트 전셋값 1억 400만원 올라</a> 한겨레</li>
+					<li><a href="#">12.16 거래한파.. 매수자가 사라졌다</a> 아시아경제</li>
+					<li><a href="#">재건축 대안 뜨는 수직증축 리모델링.. 추진..</a> 동아일보</li>
+					<li><a href="#">고가기준 9억, 서울 아파트 중간값됐다.</a> 동아일보</li>
+				</ul>
+				<hr>
+			</div>
+		</div>
+		<div class="row" id="footer">
+			<div class="col-1">
+				<img src="img/ssafy.jpg">
+			</div>
+			<div class="col">
+				<h5>Find Us</h5>
+				<hr>
+				<i class="fa fa-map-marker" aria-hidden="true"></i> (SSAFY) 서울시 강남구
+				테헤란로 멀티스퀘어<br> <i class="fa fa-phone" aria-hidden="true"></i>
+				1544-9001<br> <i class="fa fa-envelope-o" aria-hidden="true"></i><a
+					href="mailto:admin@ssafy.com"> admin@ssafy.com</a>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+	<div class="modal fade" id="loginModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">로그인 화면</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="row">
+							<div class="col-sm-3">아이디</div>
+							<div class="col-sm-9">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-3">패스워드</div>
+							<div class="col-sm-9">
+								<input type="password" class="form-control">
+							</div>
+						</div>
+
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" onclick="login()"
+						data-dismiss="modal">로그인</button>
+					<button type="button" class="btn btn-dark"
+						onclick="location.href='findPassword.html'">비밀번호 찾기</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

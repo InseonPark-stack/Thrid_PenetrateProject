@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>관심지역 주변정보</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+	crossorigin="anonymous">
+<script type="text/javascript">
+	var isLogin = false;
+</script>
+</head>
+<style>
+section {
+	display: inline-block
+}
+
+#menu {
+	margin-bottom: 20px
+}
+
+#footer {
+	margin-top: 10px
+}
+
+#list li {
+	font-size: large;
+}
+
+#list a {
+	text-align: right;
+}
+</style>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 bg-primary text-center">
+				<h1 style="font-style: italic; color: #f96800"
+					onclick="location.href='index.html'">Happy House</h1>
+				<p style="color: white;">나만의 주택 검색 플랫폼</p>
+				<div id="nonMemberLogin" style="text-align: right;">
+					<button type="button" class="btn btn-secondary" data-toggle="modal"
+						data-target="#loginModal">로그인</button>
+					<button type="button" class="btn btn-success"
+						onclick="location.href='register.html'">회원가입</button>
+				</div>
+				<div id="memberLogin" style="display: none; text-align: right;">
+					<button type="button" class="btn btn-secondary">로그아웃</button>
+					<button type="button" class="btn btn-success"
+						onclick="location.href='member.html'">회원정보</button>
+				</div>
+			</div>
+		</div>
+		<div class="row bg-warning" id="menu">
+			<div class="col-md-3"
+				onclick="location.href='ActualTransactionDong.html'">실거래가 조회</div>
+			<div class="col-md-3" onclick="location.href='AreaOfInterest.html'">관심지역정보</div>
+			<div class="col-md-2" onclick="location.href='addInterestArea.html'">관심지역등록</div>
+			<div class="col-md-2" onclick="location.href='Notice.html'">공지사항</div>
+			<div class="col-md-2" onclick="location.href='introduceSite.html'">웹사이트
+				소개</div>
+		</div>
+		<!-- 	지도 -->
+		<div class="container">
+			<div class="row">
+				<section class="col-md-9">
+					<div id="map" style="width: 100%; height: 500px; margin: auto;"></div>
+					<script defer
+						src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCa9uB_DUeRq4_0Y22OezI7P4O-d-PTacE&callback=initMap">
+						
+					</script>
+					<script type="text/javascript">
+						var map;
+						var multi = {
+							lat : 37.500613,
+							lng : 127.036431
+						}
+						function initMap() {
+							map = new google.maps.Map(document
+									.getElementById('map'), {
+								center : multi,
+								zoom : 15
+							});
+
+							infoWindow = new google.maps.InfoWindow;
+
+							//멀티캠퍼스
+							//const multimarker = new google.maps.Marker({coords: multi, content: '멀티캠퍼스', iconImage: myposition});
+							var multimarker = {
+								coords : multi,
+								content : '멀티캠퍼스(역삼)'
+							};
+							infoWindow.setPosition(multi);
+							infoWindow.setContent('멀티캠퍼스.');
+							infoWindow.open(map);
+
+						}
+					</script>
+				</section>
+				<!-- 	드롭다운 선택 -->
+				<section class="col-md-3">
+					<h3 class="bg-dark text-white text-center">관심지역 목록</h3>
+					<div id="list">
+						<ul>
+							<li>서울시 구로구 궁동</li>
+							<a href="#">메인으로 변경 /</a>
+							<a href="#">삭제</a>
+							<li>서울시 종로구 창성동</li>
+							<a href="#">메인으로 변경 /</a>
+							<a href="#">삭제</a>
+							<li>서울시 중구 북창동</li>
+							<a href="#">메인으로 변경 /</a>
+							<a href="#">삭제</a>
+						</ul>
+					</div>
+					<!-- 	  	드롭다운말고 셀렉트옵션 -->
+					<!-- 	  	<select name="cars" class="custom-select-sm"> -->
+					<!-- 		    <option selected>관심지역</option> -->
+					<!-- 		    <option value="volvo">서울시 구로구 궁동</option> -->
+					<!-- 		    <option value="fiat">서울시 종로구 창성동</option> -->
+					<!-- 		    <option value="audi">서울시 종구 북창동</option> -->
+					<!-- 		</select> -->
+
+					<form>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input"
+								id="customRadio1" name="Facilities"> <label
+								class="custom-control-label" for="customRadio1">편의시설</label>
+						</div>
+						<div class="custom-control custom-radio">
+							<input type="radio" class="custom-control-input"
+								id="customRadio2" name="Pollution"> <label
+								class="custom-control-label" for="customRadio2">오염시설</label>
+						</div>
+					</form>
+					<button type="button" class="btn btn-success my-3">search</button>
+				</section>
+			</div>
+			<div class="row" id="footer">
+				<div class="col-1">
+					<img src="img/ssafy.jpg">
+				</div>
+				<div class="col">
+					<h5>Find Us</h5>
+					<hr>
+					<i class="fa fa-map-marker" aria-hidden="true"></i> (SSAFY) 서울시 강남구
+					테헤란로 멀티스퀘어<br> <i class="fa fa-phone" aria-hidden="true"></i>
+					1544-9001<br> <i class="fa fa-envelope-o" aria-hidden="true"></i><a
+						href="mailto:admin@ssafy.com"> admin@ssafy.com</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="loginModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">로그인 화면</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="row">
+							<div class="col-sm-3">아이디</div>
+							<div class="col-sm-9">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-3">패스워드</div>
+							<div class="col-sm-9">
+								<input type="password" class="form-control">
+							</div>
+						</div>
+
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">로그인</button>
+					<button type="button" class="btn btn-dark"
+						onclick="location.href='findPassword.html'">비밀번호 찾기</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

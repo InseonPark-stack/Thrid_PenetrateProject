@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+	integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.infoText {
+	font-weight: bold;
+}
+</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12 bg-primary" style="text-align: center;">
+				<h1 style="font-style: italic; color: #f96800"
+					onclick="location.href='index.html'">Happy House</h1>
+				<p style="color: white;">나만의 주택 검색 플랫폼</p>
+				<div id="nonMemberLogin" style="text-align: right;">
+					<button type="button" class="btn btn-secondary" data-toggle="modal"
+						data-target="#loginModal">로그인</button>
+					<button type="button" class="btn btn-success"
+						onclick="location.href='register.html'">회원가입</button>
+				</div>
+				<div id="memberLogin" style="display: none; text-align: right;">
+					<button type="button" class="btn btn-secondary">로그아웃</button>
+					<button type="button" class="btn btn-success"
+						onclick="location.href='member.html'">회원정보</button>
+				</div>
+			</div>
+		</div>
+		<div class="row bg-warning" id="menu">
+			<div class="col-md-3"
+				onclick="location.href='ActualTransactionDong.html'">실거래가 조회</div>
+			<div class="col-md-3" onclick="location.href='AreaOfInterest.html'">관심지역정보</div>
+			<div class="col-md-2" onclick="location.href='addInterestArea.html'">관심지역등록</div>
+			<div class="col-md-2" onclick="location.href='Notice.html'">공지사항</div>
+			<div class="col-md-2" onclick="location.href='introduceSite.html'">웹사이트
+				소개</div>
+		</div>
+		<div class="row" style="padding: 100px;">
+			<div class="container text-center" style="border: 1px solid">
+				<form style="margin: 50px; font-family: '궁서'">
+					<h1>웹 페이지 소개</h1>
+
+					<div class="row">
+						<div class="col-6">
+							<h3>개요</h3>
+						</div>
+						<div class="col-6">
+							<span>3번째 관통 프로젝트 Happy House Web Front<br>
+
+							</span>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-6">
+							<h3>구현페이지</h3>
+						</div>
+						<div class="col-6">
+							<ul>
+								<li><a href="index.html">메인페이지</a></li>
+								<li><a href="register.html">회원가입페이지</a></li>
+								<li><a href="member.html">회원관리페이지</a></li>
+								<li>로그인/로그아웃 => 모달</li>
+								<li><a href="ActualTransactionDong.html">실거래가 검색 페이지</a></li>
+								<li><a href="findPassword.html">비밀번호 찾기</a></li>
+								<li><a href="addInterestArea.html">관심지역 등록</a></li>
+								<li><a href="AreaOfInterest.html">관심지역 주변 정보</a></li>
+								<li><a href="Notice.html">공지사항</a></li>
+								<li><a href="#">페이지소개</a></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="card" style="width: 400px; margin: 0 auto;">
+								<img class="card-img-top" src="img/pis.jpg" alt="Card image">
+								<div class="card-body">
+									<h4 class="card-title">Park In Sun</h4>
+									<p class="card-text">살려주세요...</p>
+									<a href="https://github.com/insunpark" class="btn btn-primary"><i
+										class="fa fa-github" aria-hidden="true"></i> Github</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="card" style="width: 400px; margin: 0 auto;">
+								<img class="card-img-top" src="img/lgh.jpg" alt="Card image">
+								<div class="card-body">
+									<h4 class="card-title">Lee Gyeong Hwan</h4>
+									<p class="card-text">취업하고 싶습니다... 정말로..</p>
+									<a href="https://github.com/LeeGyeongHwan"
+										class="btn btn-primary"><i class="fa fa-github"
+										aria-hidden="true"></i> Github</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row" id="footer">
+			<div class="col-1">
+				<img src="img/ssafy.jpg">
+			</div>
+			<div class="col">
+				<h5>Find Us</h5>
+				<hr>
+				<i class="fa fa-map-marker" aria-hidden="true"></i> (SSAFY) 서울시 강남구
+				테헤란로 멀티스퀘어<br> <i class="fa fa-phone" aria-hidden="true"></i>
+				1544-9001<br> <i class="fa fa-envelope-o" aria-hidden="true"></i><a
+					href="mailto:admin@ssafy.com"> admin@ssafy.com</a>
+			</div>
+
+		</div>
+
+	</div>
+	<div class="modal fade" id="loginModal" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">로그인 화면</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="row">
+							<div class="col-sm-3">아이디</div>
+							<div class="col-sm-9">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-3">패스워드</div>
+							<div class="col-sm-9">
+								<input type="password" class="form-control">
+							</div>
+						</div>
+
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">로그인</button>
+					<button type="button" class="btn btn-dark"
+						onclick="location.href='findPassword.html'">비밀번호 찾기</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">취소</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+img {
+	max-width: 100%
+}
+
+.adText {
+	height: 400px;
+	margin: 0 auto;
+	padding: 150px 40px;
+	text-align: center;
+	margin: 0 auto;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+#menu>div {
+	text-align: center;
+	padding: 10px 0;
+	font-size: 20px;
+	font-weight: bold;
+}
