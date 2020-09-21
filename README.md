@@ -14,8 +14,7 @@
 ### 1. 기본기능
 
 * 실거래가 검색 결과 페이지
-    + <img src="/WebContent/capture/실거래가_조회.PNG" width="50%">
-
+    + ![실거래가 조회](https://user-images.githubusercontent.com/37062271/93774258-05a34b80-fc5c-11ea-9ec0-d3e08577ae1b.PNG)
 
 * 회원정보 등록 페이지
     + <img src="/uploads/ba427e11c22e40225a855217a4d1e922/회원가입.PNG" width="50%">
